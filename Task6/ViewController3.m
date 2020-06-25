@@ -41,15 +41,30 @@
 
     // this one is key
     self.requestOptions.synchronous = YES;
+   
+    
+    
     NSMutableArray *assets = [[NSMutableArray alloc] init];;
     self.assets = [NSMutableArray arrayWithArray:assets];
+    PHFetchResult *smartAlbum = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:nil];
+    for (PHAssetCollection *collection in smartAlbum){
+        NSLog(@"Title Album= %@",collection.localizedTitle);
+        [assets addObject:collection];
+    }
+    
+    
     PHImageManager *manager = [PHImageManager defaultManager];
-    NSMutableArray *images = [NSMutableArray arrayWithCapacity:[assets count]];
+    PHFetchResult *assetsFetchResult = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum | PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:nil];
+    //[PHAsset fetchAssetsInAssetCollection: (PHAssetCollection *) collection options:nil];
+    
+    
+    
+   // NSMutableArray *images = [NSMutableArray arrayWithCapacity:[assets count]];
 
     // assets contains PHAsset objects.
      __block UIImage *ima;
 
-    for (PHAsset *asset in self.assets) {
+    for (PHAsset *asset in assetsFetchResult) {
         // Do something with the asset
 
         [manager requestImageForAsset:asset
@@ -59,9 +74,14 @@
                         resultHandler:^void(UIImage *image, NSDictionary *info) {
                             ima = image;
 
-                            [images addObject:ima];
+                            [self.assets addObject:ima];
                         }];
-
+//        [manager requestImageForAsset:asset
+//                           targetSize: PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFit options:self.requestOptions
+//                        resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+//        //add image to array
+//                    [self.assets addObject:result];
+//                }];
 
     }
     
