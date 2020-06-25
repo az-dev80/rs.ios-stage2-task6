@@ -19,26 +19,39 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Are you ready?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inw-CW-Hj3">
-                    <rect key="frame" x="150" y="238" width="115" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Are you ready?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Inw-CW-Hj3">
+                    <rect key="frame" x="123" y="160" width="168" height="29"/>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnc-uY-03O">
-                    <rect key="frame" x="184" y="596" width="47" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="START"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lnc-uY-03O">
+                    <rect key="frame" x="59" y="610" width="297" height="55"/>
+                    <color key="backgroundColor" red="0.97647058823529409" green="0.80000000000000004" blue="0.47058823529411764" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="55" id="c98-ci-LEd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                    <state key="normal" title="START">
+                        <color key="titleColor" red="0.062745098039215685" green="0.062745098039215685" blue="0.062745098039215685" alpha="0.84705882352941175" colorSpace="calibratedRGB"/>
+                    </state>
                     <connections>
                         <action selector="down:" destination="-1" eventType="touchUpInside" id="HA4-JW-bd5"/>
                     </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="lnc-uY-03O" secondAttribute="bottom" constant="197" id="aa3-Ck-4Xo"/>
+                <constraint firstItem="lnc-uY-03O" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dWY-7F-K8f"/>
+                <constraint firstItem="Inw-CW-Hj3" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="123" id="tVP-aA-phW"/>
+                <constraint firstItem="Inw-CW-Hj3" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="116" id="vlb-N3-Zjk"/>
+                <constraint firstItem="Inw-CW-Hj3" firstAttribute="centerX" secondItem="lnc-uY-03O" secondAttribute="centerX" id="xpk-T0-Mq4"/>
+                <constraint firstItem="lnc-uY-03O" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="59" id="xvQ-y3-TMe"/>
+            </constraints>
             <nil key="simulatedBottomBarMetrics"/>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="154" y="127"/>
+            <point key="canvasLocation" x="153.62318840579712" y="126.5625"/>
         </view>
     </objects>
 </document>

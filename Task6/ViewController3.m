@@ -44,17 +44,17 @@
    
     
     
-    NSMutableArray *assets = [[NSMutableArray alloc] init];;
-    self.assets = [NSMutableArray arrayWithArray:assets];
-    PHFetchResult *smartAlbum = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:nil];
-    for (PHAssetCollection *collection in smartAlbum){
-        NSLog(@"Title Album= %@",collection.localizedTitle);
-        [assets addObject:collection];
-    }
+//    NSMutableArray *assets = [[NSMutableArray alloc] init];;
+//    self.assets = [NSMutableArray arrayWithArray:assets];
+//    PHFetchResult *smartAlbum = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:nil];
+//    for (PHAssetCollection *collection in smartAlbum){
+//        NSLog(@"Title Album= %@",collection.localizedTitle);
+//        [assets addObject:collection];
+//    }
+//    
     
-    
-    PHImageManager *manager = [PHImageManager defaultManager];
-    PHFetchResult *assetsFetchResult = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum | PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:nil];
+//    PHImageManager *manager = [PHImageManager defaultManager];
+//    PHFetchResult *assetsFetchResult = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum | PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAny options:nil];
     //[PHAsset fetchAssetsInAssetCollection: (PHAssetCollection *) collection options:nil];
     
     
@@ -62,20 +62,20 @@
    // NSMutableArray *images = [NSMutableArray arrayWithCapacity:[assets count]];
 
     // assets contains PHAsset objects.
-     __block UIImage *ima;
+   //  __block UIImage *ima;
 
-    for (PHAsset *asset in assetsFetchResult) {
+   // for (PHAsset *asset in assetsFetchResult) {
         // Do something with the asset
 
-        [manager requestImageForAsset:asset
-                           targetSize:PHImageManagerMaximumSize
-                          contentMode:PHImageContentModeDefault
-                              options:self.requestOptions
-                        resultHandler:^void(UIImage *image, NSDictionary *info) {
-                            ima = image;
-
-                            [self.assets addObject:ima];
-                        }];
+//        [manager requestImageForAsset:asset
+//                           targetSize:PHImageManagerMaximumSize
+//                          contentMode:PHImageContentModeDefault
+//                              options:self.requestOptions
+//                        resultHandler:^void(UIImage *image, NSDictionary *info) {
+//                            ima = image;
+//
+//                            [images addObject:ima];
+//                        }];
 //        [manager requestImageForAsset:asset
 //                           targetSize: PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFit options:self.requestOptions
 //                        resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
@@ -86,7 +86,7 @@
     }
     
     
-    }
+    //}
     // Do any additional setup after loading the view from its nib.
 
 
